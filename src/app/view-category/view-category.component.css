@@ -1,0 +1,33 @@
+nav{
+    height: 90px;
+    background-color: rgb(239, 246, 246);
+}
+.navbar-brand {
+    font-size: 27px;
+    font-weight: 700;
+}
+.nav-item a{
+    font-size: 19px;
+    font-weight: 500;
+}
+.nav-link:hover{
+    color: white;
+}
+.nav-link::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #C52031;
+    margin: auto;
+    display: block;
+    border-radius: 4px;
+}
+.nav-link:hover::after{
+    width: 100%;
+    transition: width 0.3s linear;
+
+}
+td:hover{
+    color: white;
+    background-color: rgb(216, 25, 25);
+}

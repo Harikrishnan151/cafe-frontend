@@ -1,0 +1,73 @@
+<app-header></app-header>
+  
+<!-- 
+  <div class="container mt-5">
+    <h1 style="color: #C52031;" class="my-5">All Products </h1>
+    <div class="row"> -->
+<!--      
+        <div class="card mx-4 my-3" style="width: 18rem; " *ngFor="let product of allProducts ">
+            <img style=" height: 200px;" [src]="product.photo" class="card-img-top mt-2" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Name :{{product.Productname}}</h5>
+              <p class="card-text">Discription :{{product.discription}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><h5>Price :{{product.price}} </h5></li>
+             
+            </ul>
+
+          </div> -->
+          
+   
+ 
+
+
+                <div class="container-fluid mt-5">
+                  
+                  <h1 style="color: #C52031; margin-left: 60px;" class="my-5">All Products <button style="margin-left:780px; width: 140px;" routerLink="/dashboard" class="btn btn-danger">Back</button> </h1>
+                  
+                  
+                
+          
+                  <div class="row">
+                      <div class="wrapper" *ngFor="let product of allProducts">
+                          <div class="cols">
+                              <div class="col" ontouchstart="this.classList.toggle('hover');">
+                                  <div class="container">
+                                      <div class="front" style="background-image: url({{product.photo}})">
+                                          <div class="inner">
+                                              <p>{{product.Productname}}</p>
+                                              
+                                          </div>
+                                      </div>
+                                      <div class="back">
+                                          <div class="inner">
+                                            <p>{{product.Productname}}</p>
+                                            <p>{{product.discription}}</p>
+                                            <span>Price: {{product.price}}Rs</span>
+                                              <!-- <button type="button" class="btn btn-primary"
+                                                  routerLink="/doctorLists/doctorDetails/">View
+                                                  Profile</button> -->
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+              
+                          </div>
+                      </div>
+                  </div>
+              </div>
+      
+
+
+
+
+<!-- 
+        <div class="my-4" >
+          <button style="margin-left:190px;" routerLink="/dashboard" class="btn btn-primary">Back</button>
+        </div> -->
+
+    <!-- </div>
+  </div> -->
+
+

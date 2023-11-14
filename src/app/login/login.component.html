@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg ">
+  <div class="container-fluid">
+    <a  style="color: #C52031; font-weight: 700;"class="navbar-brand " href="#"><i class="fa-brands fa-slack fa-xl" style="color: #C52031; margin-right: 7px;"></i><i class="fa-solid fa-c fa-xl"></i>afe Management System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- <div class="d-flex" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a style="color: #ffffff;" st class="nav-link active" aria-current="page" routerLink="login" >Login</a>
+        </li>
+        <li class="nav-item">
+          <a style="color: #ffffff;" class="nav-link" routerLink="register">Register</a>
+        </li>
+        <li class="nav-item">
+          <a style="color: #ffffff;" class="nav-link" href="#">Forgot password</a>
+        </li>
+       
+      </ul>
+    </div> -->
+  </div>
+</nav>
+<div class="container">
+
+  <div class="row">
+    <div  class="col-6 ">
+      <img src="https://media.tenor.com/p0G_bmA2vSYAAAAd/login.gif" alt="">
+    </div>
+    <div class="col-6 ">
+      <form (ngSubmit)="login()" [formGroup]="loginForm" class="mt-5">
+        <h2 style=" text-align: center; font-weight: 800;">Sign in</h2>
+        <div class="mb-5">
+          <label for="exampleInputEmail1" class="form-label mt-4">User Name</label>
+          <input name="username" formControlName="username" type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div *ngIf="this.loginForm.get('username')?.errors&&this.loginForm.get('username')?.touched" class="text-danger">Invalid Username</div>
+
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input name="pasword" formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+          <div *ngIf="this.loginForm.get('username')?.errors&&this.loginForm.get('username')?.touched" class="text-danger">Invalid Password</div>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Remember me</label>
+        </div>
+       <h4 class="text-center text-danger" >{{loginError}}</h4>
+        <button  type="submit" class="btn btn-primary">Login 
+          <div *ngIf="loginSuccess" class="spinner-border " role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div></button>
+        <div class="reg">
+          <span >Don't have a account?</span><span class="reg"><a routerLink="/register">Register
+              now</a></span>
+
+        </div>
+      </form>
+    </div>
+    
+  </div>
+</div>
+

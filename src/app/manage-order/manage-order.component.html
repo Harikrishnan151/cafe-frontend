@@ -1,0 +1,159 @@
+<!-- navbar -->
+<app-header></app-header>
+
+<div class="container">
+  <h1 style="color: #C52031;" class="my-5">Manage Order</h1>
+  <div class="row">
+    <div class="col">
+      <h2 style="color: #C52031;">Customer Details</h2>
+      <form action="" [formGroup]="custmerForm" (ngSubmit)="submitForm()">
+        <div class="form-floating my-4 ">
+
+
+          <input style="height: 36px;" name="name" formControlName="name" class="mx-3" type="text" placeholder="Name">
+          <input style="height: 36px; "  name="email" formControlName="email" class="mx-3" type="email" placeholder="Email">
+          <input style="height: 36px; "  name="number" formControlName="number" class="mx-3" type="text" placeholder="Contact Number">
+
+          <select style="height: 36px; "  name="paymenttype" formControlName="paymenttype"  >
+            <option  selected value="" >Payment Method</option>
+            <option >Cash</option>
+            <option >Cards</option>
+            <option >UPI</option>
+
+          </select>
+
+          <button  type="submit" class="btn btn-outline-success mx-3">Add Custmer</button>
+        
+        </div>
+        
+         
+     
+      </form>
+        <div>
+          <hr>
+          <h2 style="color: #C52031;" class="my-4">Product Details</h2>
+
+
+          <div class="col">
+            <div class="row-table ">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th style="padding-left: 40px;" scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Delete</th>
+                    
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr class="table-active" *ngFor="let cart of  cartProducts let i=index" >
+
+
+                    <th scope="row">{{i+1}}</th>
+                    <td >{{cart.Productname}}</td>
+                    <td>{{cart.category}}</td>
+                    <td style="width: 200px;"><button style="font-size: x-large;" (click)="decrement(cart.id)" class="btn">-</button>
+                    <input style="width: 100px; padding-left: 45px;" type="text" [value]="cart.quantity" readonly><button style="font-size: x-large;" (click)="increment(cart.id)"  class="btn ">+</button></td>
+                    <td style="padding-left: 20px;">{{cart.price}}</td>
+                    <td style="padding-left: 30px;"><button (click)="deleteCartproduct(cart.id)"  style="border: none;"> <i class="fa-solid fa-trash"
+                      style="color: #ef0606;"></i></button></td>
+                    
+
+
+                  </tr>
+                  
+                  
+
+                </tbody>
+              </table>
+              <div class="row my-3">
+                <div class="col-6 my-3">
+                  <button routerLink="/manageproduct" class="btn btn-primary">Add item</button>
+                </div>
+                <div class="col-6 my-3 " style="padding-left: 300px;"  >
+                  <h2 >Total :{{cartTotalPrice}} Rs</h2>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6 my-3">
+                  <button (click)="delete()" routerLink="/manageproduct" class="btn btn-danger">New Bill</button>
+                </div>
+                <div class="col-6 my-3 " style="padding-left: 300px;" >
+                  <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-success">Print</button>
+                </div>
+                
+                <!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div id="invoice_container">
+      <div class="modal-header">
+        <h5  style="margin-left: 80px;color: #C52031;" class="modal-title " id="staticBackdropLabel"><i class="fa-brands fa-slack fa-xl"
+          style="color: #C52031; margin-right: 7px;"></i><i class="fa-solid fa-c fa-xl"></i>afe Management System</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      </div>
+      <div class="modal-body" >
+        <div class="col6">
+
+        </div>
+        <div class="col6">
+         <div style="text-align: center;">
+          New York, NY 10012, US <br>
+          info@cafemanagementsystem.com
+
+         </div>
+           
+         
+          <h5 style="text-align: center;" >Bill no:{{ generateRandomNumber() }} </h5>
+          <p style="text-align: center;"> Date:{{loginDate|date:'short'}}</p>
+          
+        </div>
+
+       <p>Name: {{name}}</p>
+       <p>email: {{email}}</p>
+       <p>Mobile Num :{{number}}</p>
+       <p>Payment Type: {{paymenttype}}</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Name</th>
+              <th scope="col">Category</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-active" *ngFor="let cart of  cartProducts let i=index">
+              <th scope="row">{{i+1}}</th>
+              <td>{{cart.Productname}}</td>
+              <td>{{cart.category}}</td>
+              <td>{{cart.quantity}}</td>
+              <td>{{cart.price}}</td>
+
+            </tr>
+           
+          </tbody>
+        </table>
+        <h5 style="margin-left: 350px;color: #C52031;" >Total :{{cartTotalPrice}}Rs</h5>
+      </div>
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button (click)="handleExport()"  type="button" class="btn btn-primary">Generate Bill</button>
+      </div>
+    </div>
+  </div>
+</div>
+              </div>
+            </div>
+
+          </div>
+      
+    </div>
+  </div>
+</div>

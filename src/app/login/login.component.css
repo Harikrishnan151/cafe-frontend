@@ -1,0 +1,52 @@
+nav{
+    height:90px; 
+    
+    
+    background-color: rgb(239, 246, 246);
+}
+nav a{
+    font-size: 26px;
+}
+form{
+   
+    height: 450px;
+    padding: 20px;
+    width: 400px;
+    margin-left: 10px;
+    /* border: 1px solid black; */
+}
+label{
+    
+    font-size: larger;
+    font-weight: 400;
+}
+
+input{
+    border: 1px solid black;
+}
+button{
+    margin-left: 100px;
+    width: 160px;
+}
+.reg a{
+    color: #00ADEF;
+    text-decoration: none;
+    /* margin-left: -5px; */
+   
+}
+.reg{
+    margin-top: 18px;
+    padding: 2px;
+    margin-left: 30px;
+}
+.reg span{
+    margin-left: 15px;
+    font-weight: 500;
+    font-weight: 600;
+}
+img{
+    width: 400px;
+    margin-top: 70px;
+    margin-left: 70px;
+}
+

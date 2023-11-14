@@ -1,0 +1,35 @@
+nav{
+    height:90px; 
+    
+    
+    background-color: rgb(239, 246, 246);
+}
+nav a{
+    font-size: 26px;
+}
+form{
+    
+    height: 500px;
+    /* padding: 20px; */
+}
+input{
+    border: 1px solid black;
+}
+button{
+    margin-left: 250px;
+}
+label{
+    
+    font-size: larger;
+    font-weight: 400;
+}
+img{
+    width:500px ;
+}
+/* .container-fluid{
+    background-image: url('https://img.freepik.com/premium-photo/empty-wooden-bar-table-with-blurred-background-beautiful-shelves-bokeh-style-with-bottles_909927-2083.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    
+} */

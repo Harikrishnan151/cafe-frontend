@@ -1,0 +1,74 @@
+<!-- navbar -->
+<app-header></app-header>
+
+<div class="container ">
+  <h1 style="color: #C52031;" class="my-4">Manage products</h1>
+  <div class="row">
+    <!-- search bar -->
+    <div class="col-6 mt-3">
+      <form class="d-flex ">
+        <input (keyup)="search($event)" class="form-control me-2 " type="search" placeholder="Search By Product name"
+          aria-label="Search" style="border: 1px solid black;">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+    <div class="col-6">
+      <!-- add product button -->
+
+      <button style="float:right; height: 38px;" routerLink="/addproduct" class="btn btn-outline-danger">Add
+        Products</button>
+
+    </div>
+
+
+    <div class="col my-3">
+      <div class="row-table m-2">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Name</th>
+              <th scope="col">Category</th>
+              <th style="padding-left: 250px;" scope="col">Discription</th>
+              <th scope="col">Price</th>
+              <!-- <th scope="col">Product Id</th> -->
+              <th scope="col">Bill Item</th>
+              <th scope="col">edit</th>
+              <th scope="col">Delete</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-active" *ngFor="let product of allProducts | search: searchkey:'Productname' let i=index ">
+              <th scope="row">{{i+1}}</th>
+
+              <td>{{product.Productname}}</td>
+              <td>{{product.category}}</td>
+              <td>{{product.discription}}</td>
+              <td>{{product.price}}</td>
+              <!-- <td style="padding-left: 50px;">{{product.id}}</td> -->
+              <td style="padding-left: 30px;"> <button (click)="addToCart(product)"  style="border: none;"><i class="fa-solid fa-plus" style="color: #3bde56;"></i></button></td>
+              <td><button routerLink="/editproductdetails/{{product.id}}" style="border: none;" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-pen" style="color: #3f35cc97;"></i></button></td>
+              <td style="padding-left: 20px; "> <button (click)="delectProduct(product.id)" style="border: none;"> <i class="fa-solid fa-trash"
+                    style="color: #ef0606;"></i></button></td>
+
+
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+
+<br><br>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- <app-footer></app-footer> -->

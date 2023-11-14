@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg ">
+  <div class="container-fluid">
+    <a  style="color: #C52031; font-weight: 700;"class="navbar-brand " href="#"><i class="fa-brands fa-slack fa-xl" style="color: #C52031; margin-right: 7px;"></i><i class="fa-solid fa-c fa-xl"></i>afe Management System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  </div>
+</nav>
+<div *ngIf="RegisterSuccess" class="text-center my-5 p-5">
+  <h1>You data is getting registered please wait...</h1>
+  <div class="spinner-border text-danger" role="status">
+    <span class="visually-hidden">Loading...</span></div>
+</div>
+<!-- Registration form -->
+
+<div *ngIf="!RegisterSuccess" class="container">
+    <div class="row">
+        <div class="col-6">
+          <img src="https://rurutek.com/jio/assets/img/login-animate.gif" alt="">
+        </div>
+        <div class="col-6">
+            <form (ngSubmit)="register()"  [formGroup]="registerForm" class="mt-5">
+              <h2 style=" text-align: center; font-weight: 800;">Sign up</h2>
+              <div class="mb-3">
+                <label for="exampleInputusername" class="form-label">User Name</label>
+                <input name="username" formControlName="username" type="username" class="form-control" id="exampleInpuyusername" aria-describedby="emailHelp">
+                <div *ngIf="this.registerForm.get('username')?.errors&&this.registerForm.get('username')?.touched" class="text-danger">Invalid Username</div>
+                
+              </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input name="email" formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <div *ngIf="this.registerForm.get('email')?.errors&&this.registerForm.get('email')?.touched" class="text-danger">Invalid email</div>
+              
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input name="password" formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+                  <div *ngIf="this.registerForm.get('password')?.errors&&this.registerForm.get('password')?.touched" class="text-danger">Invalid Password</div>
+                </div>
+                <!-- <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Re-Enter Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div> -->
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  <div class="text-center">
+                    <h3 class="text-danger">{{RegisterError}}</h3></div>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign up</button>
+              </form>
+        </div>
+        
+    </div>
+</div>
+

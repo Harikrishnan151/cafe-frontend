@@ -1,0 +1,65 @@
+<!-- navbar -->
+<app-header></app-header>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6 ">
+      <!-- image -->
+      <h2 >Add products</h2>
+      <img src="https://www.petpooja.com/assets/images/Pizzeria/Item-Combos-Variations-pp.webp" alt="">
+      <div >
+        
+       
+        <h6  >Manage various combos, group offers, variations and add-ons without hassle</h6>
+        <h6  >Take large volume orders with different add-ons and combos with lightning speed</h6>
+      </div>
+    </div>
+    
+    <div class="col-6 mt-4">
+     <!-- form -->
+<div class="form1 ">
+  <form (ngSubmit)="addProduct()" [formGroup]="addProductForm">
+    <div class="mb-3">
+      <label for="exampleInputid" class="form-label">id</label>
+      <input name="id" formControlName="id" type="string" class="form-control" id="exampleInputid" aria-describedby="name">
+      <div *ngIf="this.addProductForm.get('id')?.errors&&this.addProductForm.get('id')?.touched" class="text-danger">Invalid Id</div>
+    </div>
+      <div class="mb-3">
+        <label for="exampleInputname" class="form-label">Name</label>
+        <input name="Productname" formControlName="Productname" type="string" class="form-control" id="exampleInputname" aria-describedby="name">
+        <div *ngIf="this.addProductForm.get('Productname')?.errors&&this.addProductForm.get('Productname')?.touched" class="text-danger">Invalid product name</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputcategory" class="form-label">Category</label>
+        <input name="category" formControlName="category" type="string" class="form-control" id="exampleInputcategory">
+        <div *ngIf="this.addProductForm.get('category')?.errors&&this.addProductForm.get('category')?.touched" class="text-danger">Invalid category</div>
+      </div>
+      <div class="mb-3">
+          <label for="exampleInputDiscription" class="form-label">Discription</label>
+          <input name="discription" formControlName="discription" type="email" class="form-control" id="exampleInputDiscription" aria-describedby="discription">
+          <div *ngIf="this.addProductForm.get('discription')?.errors&&this.addProductForm.get('discription')?.touched" class="text-danger">Invalid discription</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputprice" class="form-label">Price</label>
+          <input name="price" formControlName="price" type="number" class="form-control" id="exampleInputprice" aria-describedby="price">
+          <div *ngIf="this.addProductForm.get('price')?.errors&&this.addProductForm.get('price')?.touched" class="text-danger">Invalid price</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputprice" class="form-label">Image Url</label>
+          <input name="quantity" formControlName="quantity" type="text" class="form-control" id="exampleInputprice" aria-describedby="price">
+          <div *ngIf="this.addProductForm.get('image')?.errors&&this.addProductForm.get('image')?.touched" class="text-danger">Invalid image url</div>
+        </div>
+     
+     
+      <button type="submit" class="btn btn-primary">Submit</button> 
+      
+    </form>
+  </div>
+    </div>
+  </div>
+</div>
+<br>
+<br> <br>
+
+<!-- <app-footer></app-footer> -->

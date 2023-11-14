@@ -1,0 +1,86 @@
+<!-- navbar -->
+<app-header></app-header>
+
+<div class="container">
+  <h1 class="my-3" style="color: #C52031;">Edit Product</h1>
+  <div class="row">
+    <div class="col-6 my-3">
+       
+      <div style="margin-left: 70px;" class="form1 ">
+        <!-- <form >
+          <div class="mb-3">
+            <label for="exampleInputid" class="form-label">Product id</label>
+            <input [(ngModel)]="allProduct.data.id"  name="id"  type="string" class="form-control" id="exampleInputid" aria-describedby="name">
+        
+          </div>
+            <div class="mb-3">
+              <label for="exampleInputname" class="form-label">Product Name</label>
+              <input [(ngModel)]="allProduct.data.Productname" name="Productname"  type="string" class="form-control" id="exampleInputname" aria-describedby="name">
+            
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputcategory" class="form-label">Category</label>
+              <input [(ngModel)]="allProduct.data.category" name="category"  type="string" class="form-control" id="exampleInputcategory">
+    
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputDiscription" class="form-label">Discription</label>
+                <input [(ngModel)]="allProduct.data.discription" name="discription"  type="email" class="form-control" id="exampleInputDiscription" aria-describedby="discription">
+            
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputprice" class="form-label">Price</label>
+                <input [(ngModel)]="allProduct.data.price" name="price"  type="number" class="form-control" id="exampleInputprice" aria-describedby="price">
+                
+              </div>
+           
+           <div style="display: flex; margin-left: 140px;">
+            <button routerLink="/manageproduct"  type="submit" class="btn btn-danger mx-5">Cancel</button> 
+            <button (click)="editProduct()"  type="submit" class="btn btn-success">Submit</button> 
+            
+           </div>
+           
+            
+          </form> -->
+          <form action="">.
+
+            <div class="mb-3">
+              <label for="exampleInputid" class="form-label">Product id</label>
+              <input [(ngModel)]="allProduct.id" name="id"  type="string" class="form-control" id="exampleInputid" aria-describedby="name">
+          
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputname" class="form-label">Product Name</label>
+              <input [(ngModel)]="allProduct.Productname" name="Productname"  type="string" class="form-control" id="exampleInputname" aria-describedby="name">
+            
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputcategory" class="form-label">Category</label>
+              <input [(ngModel)]="allProduct.category" name="category"  type="string" class="form-control" id="exampleInputcategory">
+    
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputDiscription" class="form-label">Discription</label>
+              <input [(ngModel)]="allProduct.discription" name="discription"  type="email" class="form-control" id="exampleInputDiscription" aria-describedby="discription">
+          
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputprice" class="form-label">Price</label>
+              <input [(ngModel)]="allProduct.price" name="price"  type="number" class="form-control" id="exampleInputprice" aria-describedby="price">
+              
+            </div>
+            <div style="display: flex; margin-left: 140px;">
+              <button routerLink="/manageproduct"  type="submit" class="btn btn-danger mx-5">Cancel</button> 
+              <button (click)="editProduct()" routerLink="/manageproduct"  type="submit" class="btn btn-success">Submit</button> 
+              
+             </div>
+
+          </form>
+        </div>
+    </div>
+    <div style="margin-left: -70px;" class="col-6 my-3">
+      <img width="600px" src="https://www.petpooja.com/assets/images/Bakery/inventory-management-bakery.webp" alt="">
+    </div>
+  </div>
+</div>
+<br><br>
